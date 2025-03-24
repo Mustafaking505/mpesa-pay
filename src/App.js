@@ -60,7 +60,7 @@ function App() {
           cancelButtonText: "Cancel",
         }).then((result) => {
           if (result.isConfirmed) {
-            window.location.href = `https://mpesa.giftedtech.web.id/export-transactions?id=${response.data.data.refference}`;
+            window.location.href = `${process.env.REACT_APP_BACKEND_URL}/export-transactions?id=${response.data.data.refference}`;
           }
         });
       } else {
