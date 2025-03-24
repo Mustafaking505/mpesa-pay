@@ -1,0 +1,255 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #ffffff;
+  color: #000;
+  margin: 0;
+  padding: 0;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+body.dark-mode {
+  background-color: #121212;
+  color: #ffffff;
+}
+
+/* Header Styles */
+.header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.logo-container img {
+  width: 100px;
+  height: 90px;
+  border-radius: 50%;
+  margin-bottom: 1rem;
+}
+
+.header h3 {
+  margin: 0;
+  font-size: 25px;
+  color: inherit;
+}
+
+/* Payment Container Styles */
+.payment-container {
+  margin: 2rem auto;
+  padding: 2rem;
+  max-width: 310px;
+  background-color: #ffffe0;
+  border-radius: 30px;
+  box-shadow: 0 4px 8px rgba(0, 0.3, 0, 1.0);
+  transition: background-color 0.3s;
+  position: relative;
+}
+
+body.dark-mode .payment-container {
+  background-color: #1e1e1e;
+  color: #ffffff;
+}
+
+.payment-container input {
+  width: 100%;
+  padding: 0.5rem;
+  margin-bottom: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  background-color: #ffffff;
+  color: #000;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+body.dark-mode .payment-container input {
+  background-color: #333;
+  color: #ffffff;
+  border-color: #555;
+}
+
+.merchant-list {
+  display: flex;
+  overflow-x: auto;
+  gap: 10px;
+  margin-bottom: 1.5rem;
+  padding-bottom: 10px;
+  scrollbar-width: thin;
+  scrollbar-color: #888 #f1f1f1;
+}
+
+.merchant-list::-webkit-scrollbar {
+  height: 8px;
+}
+
+.merchant-list::-webkit-scrollbar-thumb {
+  background-color: #888;
+  border-radius: 4px;
+}
+
+.merchant-list::-webkit-scrollbar-track {
+  background-color: #f1f1f1;
+}
+
+.merchant-option {
+  flex: 0 0 auto;
+  width: 120px;
+  padding: 10px;
+  border: 1px solid #b204ac;
+  border-radius: 10px;
+  text-align: center;
+  cursor: pointer;
+  transition: background-color 0.3s, border-color 0.3s;
+  position: relative;
+}
+
+.merchant-option h4 {
+  margin: 0;
+  font-size: 13px;
+  color: inherit;
+}
+
+.merchant-option p {
+  margin: 5px 0 0;
+  font-size: 12px;
+  color: #666;
+}
+
+body.dark-mode .merchant-option p {
+  color: #aaa;
+}
+
+.merchant-option .logo {
+  position: absolute;
+  bottom: -2px;
+  right: 3px;
+  width: 45px;
+  height: 45px;
+}
+
+.merchant-option .selector {
+  position: left;
+  top: 0px;
+  right: 2px;
+  width: 12px;
+  height: 12px;
+  border: 2px solid #ccc;
+  border-radius: 50%;
+  transition: background-color 0.3s, border-color 0.3s;
+}
+
+.merchant-option.selected .selector {
+  background-color: blue;
+  border-color: black;
+}
+
+.payment-container button {
+  width: 40%;
+  padding: 1rem;
+  background-color: yellow;
+  border: none;
+  border-radius: 30px;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+  margin: 0 auto;
+  display: block;
+  transition: background-color 0.3s;
+}
+
+.payment-container button:hover {
+  background-color: blue;
+}
+
+footer {
+  background-color: transparent;
+  color: inherit;
+  font-weight: bold;
+  text-align: center;
+  padding: 1rem 0;
+}
+
+footer a {
+  color: blue;
+  text-decoration: none;
+}
+
+footer a:hover {
+  color: red;
+  text-decoration: none;
+}
+
+.loader-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.loader {
+  position: relative;
+  width: 80px;
+  height: 80px;
+  border: 8px solid #e0e0e0;
+  border-top: 8px solid #ff007f;
+  border-right: 8px solid #7f00ff;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+.loader::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 30px;
+  height: 30px;
+  background: linear-gradient(45deg, #ff007f, #7f00ff);
+  border-radius: 50%;
+}
+
+.loader-text {
+  margin-top: 1rem;
+  color: white;
+  font-size: 16px;
+  text-align: center;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Dark mode toggle button */
+.dark-mode-toggle {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background-color: #333;
+  color: #fff;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.dark-mode-toggle:hover {
+  background-color: #555;
+}
+
+body.dark-mode .dark-mode-toggle {
+  background-color: #fff;
+  color: #333;
+}
